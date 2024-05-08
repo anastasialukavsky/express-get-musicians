@@ -11,12 +11,9 @@ const app = require('./src/app');
 const seedMusician = require('./seedData');
 
 describe('./musicians endpoint', () => {
-  // Write your tests here
   let musicianId;
 
   beforeAll(async () => {
-    // Perform any setup, such as seeding the database, before running the tests
-    // For example, you might want to create a musician to use in the tests
     const newMusician = await Musician.create({
       name: 'John Doe',
       instrument: 'Guitar',
@@ -62,8 +59,6 @@ describe('/bands endpoint', () => {
   let bandId;
 
   beforeAll(async () => {
-    // Perform any setup, such as seeding the database, before running the tests
-    // For example, you might want to create a band to use in the tests
     const newBand = await Band.create({ name: 'The Beatles', genre: 'Rock' });
     bandId = newBand.id;
   });
@@ -101,5 +96,4 @@ describe('/bands endpoint', () => {
     expect(res.statusCode).toEqual(204);
   });
 
-  // Add more test cases as needed
 });
